@@ -9,7 +9,12 @@ class StringCalculator:
                     x=x.lower()
                     sum =sum + int(str(ord(x)-96))
                  else:
-                    sum=sum+int(x)
+                    try:
+                        assert int(x) > 0
+                        sum=sum+int(x)
+                    except AssertionError:
+                        print("Negative number not Allowed")
+                        sum=x
         print(sum)
             
 
