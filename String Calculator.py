@@ -1,6 +1,7 @@
 class StringCalculator:
     def add(self,Number):
         sum=0
+        neg=[]
         for x in Number:
             if x == 0:
                 sum=0
@@ -14,12 +15,16 @@ class StringCalculator:
                         sum=sum+int(x)
                     except AssertionError:
                         print("Negative number not Allowed")
-                        sum=x
-        print(sum)
+                        neg.append(x)
+                        
+        print("Sum is :",sum)
+
+        for i in neg:
+            print("negative number is :",i)
             
 
 
-number=str(input("Enter number sepreted by Comma :"))
+number=str(input("Enter number sepreted by Commm :"))
 Numberlist=number.split(",")
 Sc=StringCalculator()
 Sc.add(Numberlist)
